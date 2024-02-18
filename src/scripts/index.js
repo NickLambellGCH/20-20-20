@@ -96,6 +96,9 @@ ${seconds.toString().padStart(2, "0")}`;
                 let notification = new Notification(this.notificationTitle,
                     { body: this.notificationBody });
                 notification.addEventListener("show", () => this.handleNotificationResponse(2000));
+
+            } else {
+                this.handleNotificationResponse(2000);
             }
 
             this.isFinished = true;

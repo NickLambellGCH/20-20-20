@@ -104,6 +104,8 @@ var Timer = function () {
                     notification.addEventListener("show", function () {
                         return _this.handleNotificationResponse(2000);
                     });
+                } else {
+                    this.handleNotificationResponse(2000);
                 }
 
                 this.isFinished = true;
