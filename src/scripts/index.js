@@ -88,7 +88,10 @@ ${seconds.toString().padStart(2, "0")}`;
         if (countdownDate.countdown().toString() == "") {
             this.setCircleDasharray(0);
             document.querySelector("audio").play();
-            if (checkNotificationPromise()) {
+            if (
+                checkNotificationPromise() &&
+                Notification.permission == "granted"
+            ) {
                 // Send user a notification that the timer is done
                 let notification = new Notification(this.notificationTitle,
                     { body: this.notificationBody });
