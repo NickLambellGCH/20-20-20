@@ -85,7 +85,7 @@ ${seconds.toString().padStart(2, "0")}`;
         this.currTimeLeft = countdownDate.diff(moment(new Date().getTime()));
         this.setCircleDasharray(this.currTimeLeft);
         this.timerElements.timeDisplay.textContent = this.formatTimeDisplay(countdownDate);
-        if (countdownDate.countdown().toString() == "") {
+        if (this.currTimeLeft <= 0) {
             this.setCircleDasharray(0);
             document.querySelector("audio").play();
             if (
